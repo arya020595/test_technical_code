@@ -47,27 +47,37 @@ Route.post('/generate_number_triangle', async ({ request }: HttpContextContract)
   }
 })
 
-
 Route.post('/generate_number_odds', async ({ request }: HttpContextContract) => {
 
   let number = request.input('number')
 
-  let i, sum: any = 0;
-  for (i=0; i<parseInt(number);i+=2){
-    sum = `${sum}, ${i}`
+  let odd_numbers: any = 0;
+  for (let i=0; i<parseInt(number);i+=2){
+    odd_numbers = `${odd_numbers}, ${i}`
   }
 
-  return sum
+  return odd_numbers
 })
 
 
 Route.post('/generate_number_prime', async ({ request }: HttpContextContract) => {
-
   let number = request.input('number')
 
-  let digits = number.toString().split('');
-  let realDigits = digits.map(Number)
-  let odds: any = realDigits.filter(data => data%2)
+  let prime_numbers: any = 0
+  for (let i = 0; i <= number; i++) {
+    let flag = 0;
 
-  return odds
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (i > 1 && flag == 0) {
+      prime_numbers = `${prime_numbers}, ${i}`
+    }
+  }
+
+  return prime_numbers
 })
