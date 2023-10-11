@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      <input onChange={handleChange} type="number" placeholder="Type a message..." />
+      <input onChange={handleChange} type="number" placeholder="Type a number..." />
 
       <div style={{display: 'flex', margin: '40px auto', justifyContent: 'center'}}>
         <button onClick={() => handlePostRequest("triangle")}>Generate Number Triangle</button>
