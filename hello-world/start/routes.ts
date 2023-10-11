@@ -52,9 +52,9 @@ Route.post('/generate_number_odds', async ({ request }: HttpContextContract) => 
 
   let number = request.input('number')
 
-  var i, sum = 0;
-  for (i = 1; i <= parseInt(number); i += 2){
-    sum += i;
+  let i, sum: any = 0;
+  for (i=0; i<parseInt(number);i+=2){
+    sum = `${sum}, ${i}`
   }
 
   return sum
