@@ -11,10 +11,10 @@
 
 ## Result
 ### Generate Number Triangle
-![alt text](https://i.imgur.com/vPY0RSw.png)
+![alt text](https://i.imgur.com/TPe9upu.png)
 
 ### Generate Number Odd
-![alt text](https://i.imgur.com/cXS83pD.png)
+![alt text](https://i.imgur.com/NzlVoTI.png)
 
 ### Generate Number Prime
-![alt text](https://i.imgur.com/0iwmVQj.png)
+![alt text](https://i.imgur.com/Zv7527x.png)
