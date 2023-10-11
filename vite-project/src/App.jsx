@@ -3,22 +3,8 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [data, setData] = useState("null")
+  const [data, setData] = useState([])
   const [textInput, setTextInput] = useState('');
-
-  const handleClickGenerateSegitiga = async (e) => {
-    e.preventDefault();
-    console.log(textInput);
-
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ number: "423423423" })
-    };
-    const response = await fetch('http://127.0.0.1:3333/generate_number_triangle', requestOptions);
-    const data = await response.json();
-    setData(data)
-  }
 
   const handleChange = (event) => {
     setTextInput(event.target.value);
@@ -32,7 +18,7 @@ function App() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          number: '234234234',
+          number: textInput,
         }),
       });
 
@@ -41,6 +27,7 @@ function App() {
       }
 
       const result = await response.json();
+      setData(result.data)
       console.log('POST request was successful:', result);
     } catch (error) {
       console.error('Error making POST request:', error);
@@ -53,15 +40,20 @@ function App() {
 
       <div style={{display: 'flex', marginTop: '10px'}}>
         <button onClick={handlePostRequest}>Generate Segitiga</button>
-        <button onClick={handleClickGenerateGanjil}>Generate Bilangan Ganjil</button>
-        <button onClick={handleClickGeneratePrima}>Activate Bilangan Prima</button>
+        {/* <button onClick={handleClickGenerateGanjil}>Generate Bilangan Ganjil</button> */}
+        {/* <button onClick={handleClickGeneratePrima}>Activate Bilangan Prima</button> */}
       </div>
 
       <h1>
         Resut: 
       </h1>
-      
-      <div>Ini resultnya: {data}</div>
+      <div>Ini resultnya: 
+        {
+          data.map((number) =>
+            <div>{number}</div>
+          )
+        }
+      </div>
     </>
   )
 }

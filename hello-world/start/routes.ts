@@ -42,7 +42,9 @@ Route.post('/generate_number_triangle', async ({ request }: HttpContextContract)
     init = `${init}0`
   })
 
-  return result
+  return {
+    data: result
+  }
 })
 
 
