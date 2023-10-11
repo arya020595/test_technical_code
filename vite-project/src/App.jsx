@@ -61,8 +61,8 @@ function App() {
       <h1>
         Resut: 
       </h1>
-      <div>Ini resultnya: 
-        <br></br>
+
+      <div>
         {
           typeNumber == "generate_number_triangle" ?
             data.map((number, index) =>
