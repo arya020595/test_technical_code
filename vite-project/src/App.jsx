@@ -53,9 +53,9 @@ function App() {
       <input onChange={handleChange} type="number" placeholder="Type a message..." />
 
       <div style={{display: 'flex', margin: '40px auto', justifyContent: 'center'}}>
-        <button onClick={() => handlePostRequest("triangle")}>Generate Segitiga</button>
-        <button onClick={() => handlePostRequest("odd")}>Generate Bilangan Ganjil</button>
-        <button onClick={() => handlePostRequest("prime")}>Activate Bilangan Prima</button>
+        <button onClick={() => handlePostRequest("triangle")}>Generate Number Triangle</button>
+        <button onClick={() => handlePostRequest("odd")}>Generate Number Odd</button>
+        <button onClick={() => handlePostRequest("prime")}>Generate Number Prima</button>
       </div>
 
       <h1>
