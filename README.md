@@ -9,4 +9,12 @@
 1. cd hello-world
 2. node ace serve --watch
 
-![alt text](https://i.imgur.com/eZh9GFr.png)https://i.imgur.com/eZh9GFr.png)
+## Result
+### Generate Number Triangle
+![alt text](https://i.imgur.com/vPY0RSw.png)
+
+### Generate Number Odd
+![alt text](https://i.imgur.com/cXS83pD.png)
+
+### Generate Number Prime
+![alt text](https://i.imgur.com/0iwmVQj.png)
