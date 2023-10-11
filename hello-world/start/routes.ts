@@ -47,6 +47,7 @@ Route.post('/generate_number_triangle', async ({ request }: HttpContextContract)
 Route.post('/generate_number_odds', async ({ request }: HttpContextContract) => {
 
   let number = request.input('number')
+  if (!number) return {data: ''}
 
   let odd_numbers: any = 0;
   for (let i=1; i<parseInt(number);i+=2){
@@ -61,6 +62,7 @@ Route.post('/generate_number_odds', async ({ request }: HttpContextContract) => 
 
 Route.post('/generate_number_prime', async ({ request }: HttpContextContract) => {
   let number = request.input('number')
+  if (!number) return {data: ''}
 
   let prime_numbers: any = 0
   for (let i = 0; i <= number; i++) {

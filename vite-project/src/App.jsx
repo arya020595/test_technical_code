@@ -58,9 +58,14 @@ function App() {
         <button onClick={() => handlePostRequest("prime")}>Generate Number Prima</button>
       </div>
 
-      <h1>
-        Resut: 
-      </h1>
+      {
+        data == '' || 0 ? 
+          null
+        :
+          <h1>
+            Resut: 
+          </h1>
+      }
 
       <div>
         {
