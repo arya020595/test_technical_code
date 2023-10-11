@@ -54,7 +54,7 @@ Route.post('/generate_number_odds', async ({ request }: HttpContextContract) => 
   }
 
   return {
-    data: odd_numbers.split(',')
+    data: odd_numbers
   }
 })
 
@@ -79,6 +79,6 @@ Route.post('/generate_number_prime', async ({ request }: HttpContextContract) =>
   }
 
   return {
-    data: prime_numbers.split(',')
+    data: prime_numbers
   }
 })

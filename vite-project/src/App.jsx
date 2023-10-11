@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [data, setData] = useState([])
   const [textInput, setTextInput] = useState('');
+  const [typeNumber, setypeNumber] = useState('generate_number_triangle');
 
   const handleChange = (event) => {
     setTextInput(event.target.value);
@@ -41,6 +41,7 @@ function App() {
 
       const result = await response.json();
       setData(result.data)
+      setypeNumber(url)
       console.log('POST request was successful:', result);
     } catch (error) {
       console.error('Error making POST request:', error);
@@ -51,7 +52,7 @@ function App() {
     <>
       <input onChange={handleChange} type="number" placeholder="Type a message..." />
 
-      <div style={{display: 'flex', marginTop: '10px'}}>
+      <div style={{display: 'flex', margin: '40px auto', justifyContent: 'center'}}>
         <button onClick={() => handlePostRequest("triangle")}>Generate Segitiga</button>
         <button onClick={() => handlePostRequest("odd")}>Generate Bilangan Ganjil</button>
         <button onClick={() => handlePostRequest("prime")}>Activate Bilangan Prima</button>
@@ -61,10 +62,13 @@ function App() {
         Resut: 
       </h1>
       <div>Ini resultnya: 
+        <br></br>
         {
-          data.map((number, index) =>
-            <div key={index}>{number}</div>
-          )
+          typeNumber == "generate_number_triangle" ?
+            data.map((number, index) =>
+              <div key={index}>{number}</div>
+            ) :
+          data
         }
       </div>
     </>
