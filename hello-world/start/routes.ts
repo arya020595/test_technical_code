@@ -27,12 +27,8 @@ Route.get('/', async () => {
 
 Route.post('/generate_number_triangle', async ({ request }: HttpContextContract) => {
 
-  let number = request.input('number')
-
-  console.log(number);
-  
+  let number = request.input('number')  
   let digits = number.toString().split('');
-  console.log(digits);
   
   let init: any = '0';
   let result: any = []
@@ -47,16 +43,19 @@ Route.post('/generate_number_triangle', async ({ request }: HttpContextContract)
   }
 })
 
+
 Route.post('/generate_number_odds', async ({ request }: HttpContextContract) => {
 
   let number = request.input('number')
 
   let odd_numbers: any = 0;
-  for (let i=0; i<parseInt(number);i+=2){
+  for (let i=1; i<parseInt(number);i+=2){
     odd_numbers = `${odd_numbers}, ${i}`
   }
 
-  return odd_numbers
+  return {
+    data: odd_numbers.split(',')
+  }
 })
 
 
@@ -79,5 +78,7 @@ Route.post('/generate_number_prime', async ({ request }: HttpContextContract) =>
     }
   }
 
-  return prime_numbers
+  return {
+    data: prime_numbers.split(',')
+  }
 })
